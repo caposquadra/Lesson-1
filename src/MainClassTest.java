@@ -1,3 +1,4 @@
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,11 +23,10 @@ public class MainClassTest extends MainClass {
 
     @Test
     public void testGetClassString() {
-        String sub_class_string = "Hello";
         System.out.println("Lesson 1. Test 3");
         System.out.println("class_string = " + this.getClassString() + "\n");
         Assert.assertTrue("GetClassString method doesn't returns Hello or hello",
-                this.getClassString().toUpperCase().contains(sub_class_string.toUpperCase()));
+                StringUtils.containsAny(this.getClassString(), "Hello", "hello"));
     }
 
 }
